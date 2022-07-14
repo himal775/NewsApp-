@@ -3,6 +3,7 @@ import 'package:news_app/api.dart';
 import 'package:news_app/model/news.dart';
 import 'package:news_app/model/newsState.dart';
 import 'package:news_app/service/newsByCategoty.dart';
+import 'package:dio/dio.dart';
 
 final newsprovider = StateNotifierProvider<NewsProvider, NewsState>(
     ((ref) => NewsProvider(NewsState.initState())));
@@ -22,4 +23,6 @@ class NewsProvider extends StateNotifier<NewsState> {
     state = state.copyWith(apiPath: apiPath, news: []);
     changeCategory();
   }
+
+  
 }
